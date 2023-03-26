@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build image'){
             steps{
-                sh 'docker build -t sanchitpasricha/jenkinstest:$BUILD_NUMBER .'
+                sh 'docker build -t sanchitpasricha/jenkinstest:latest .'
             }
         }
         stage('docker login'){
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('docker push'){
             steps{
-                sh 'docker push sanchitpasricha/jenkinstest:$BUILD_NUMBER'
+                sh 'docker push sanchitpasricha/jenkinstest:latest'
             }
         }
     }
